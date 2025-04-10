@@ -1,0 +1,53 @@
+# Python virtual environments
+venv/
+env/
+ENV/
+.env/
+.venv/
+.virtualenv/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Cache directories
+.cache/
+data/cache/
+data/outputs/
+*.cache
+
+# Output files
+*.html
+*.csv
+*.json
+
+# Environment variables
+.env
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Jupyter notebook
+.ipynb_checkpoints/
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# Streamlit
+.streamlit/
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
