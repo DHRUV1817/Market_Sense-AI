@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 
 # API Keys
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "your-api-key-here")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "your-api-key-here")
 
 # Application settings
 FLASK_ENV = os.getenv("FLASK_ENV", "development")
@@ -30,6 +30,6 @@ CACHE_DIR.mkdir(parents=True, exist_ok=True)
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # AI models configuration
-OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4")
+GROQ_MODEL = os.getenv("GROQ_MODEL", "llama3-8b-8192")
 NLP_BATCH_SIZE = int(os.getenv("NLP_BATCH_SIZE", "10"))
 CACHE_EXPIRY_DAYS = int(os.getenv("CACHE_EXPIRY_DAYS", "7"))
