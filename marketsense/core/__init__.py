@@ -1,3 +1,3 @@
-"""MarketSense AI package."""
-
-__version__ = "1.0.0"
+"""
+Core modules for MarketSense AI.
+"""
