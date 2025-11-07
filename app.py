@@ -7,10 +7,10 @@ import sys
 from pathlib import Path
 import logging
 
-# Add the current directory to Python path to ensure marketsense can be found
-current_dir = Path(__file__).resolve().parent
-if str(current_dir) not in sys.path:
-    sys.path.insert(0, str(current_dir))
+# No longer needed, as the package should be installed in editable mode
+# current_dir = Path(__file__).resolve().parent
+# if str(current_dir) not in sys.path:
+#     sys.path.insert(0, str(current_dir))
 
 # Configure logging
 logging.basicConfig(
