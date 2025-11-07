@@ -185,6 +185,7 @@ class AIEngine:
 
         return result
     
+    @cached(lambda self, company, industry, competitors, objective: f"{company}_{industry}_{objective}_{'_'.join(competitors)}_strategy")
     def generate_competitive_strategy(self, company: str, industry: str, 
                                    competitors: List[str], objective: str) -> Dict[str, Any]:
         """
@@ -199,13 +200,6 @@ class AIEngine:
         Returns:
             Dictionary containing strategic recommendations
         """
-        # Check cache
-        cache_key = f"{company}_{industry}_{objective}_{'_'.join(competitors)}_strategy"
-        cache_path = get_cache_path(cache_key)
-        
-        if is_cache_valid(cache_path):
-            return load_from_cache(cache_path)
-        
         competitors_str = ", ".join(competitors)
         
         # Map objective to specific prompt focus
@@ -249,8 +243,5 @@ class AIEngine:
         except Exception as e:
             print(f"Error generating competitive strategy: {str(e)}")
             result = {"error": "Could not generate competitive strategy."}
-
-        # Cache the result
-        save_to_cache(result, cache_path)
         
         return result
